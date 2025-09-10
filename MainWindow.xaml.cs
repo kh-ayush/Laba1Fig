@@ -23,6 +23,8 @@ namespace Laba1Fig
         public MainWindow()
         {
             InitializeComponent();
+
+
         }
     }
 }

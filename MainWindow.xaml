@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Laba1Fig"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="PaintPochti" Height="550" Width="500">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
 
+        <UniformGrid Columns="3" Margin="12" Grid.Row="0">
+            <Button Name="Tri" Content="Тругольник&#10;рандомный" Margin="0,0,5,0"/>
+            <Button Name="Chetyre" Content="Упрямугольник&#10;рандомный" Margin="5,0,5,0"/>
+            <Button Name="Square" Content="Квадрат" Margin="5,0,0,0"/>
+        </UniformGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="12">
+            <Label Content="Сдвиг по X:"/>
+            <TextBox Width="100" Margin="0,0,132,0"/>
+            <Label Content="Сдвиг по Y:" />
+            <TextBox Width="100"/>
+        </StackPanel>
+
+
+        <Canvas Name="Polotno" Grid.Row="2" Background="LightGray" Margin="12"/>
+    
     </Grid>
 </Window>
