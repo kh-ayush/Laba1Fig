@@ -8,40 +8,35 @@ namespace Laba1Fig
 {
     public class Rectangle
     {
-        private Points startPoint;
-        private int width;
-        private int height;
+        private Points TLPoint;
+        private Points BRPoint;
 
-        public Rectangle(Points startPoint, int width, int height)
+        public Rectangle(Points TLPoint, Points BRPoint)
         {
-            this.startPoint = startPoint;
-            this.width = width;
-            this.height = height;
+            this.TLPoint = TLPoint;
+            this.BRPoint = BRPoint;
         }
 
-        public Points getStartPoint()
+        public Points getTLPoint()
         {
-            return startPoint;
+            return TLPoint;
         }
 
-        public int getWidth()
+        public Points getBRPoint()
         {
-            return width;
-        }
-
-        public int getHeight()
-        {
-            return height;
+            return BRPoint;
         }
 
         public void addX(int X)
         {
-            startPoint.addX(X);
+            TLPoint.addX(X);
+            BRPoint.addX(X);
         }
 
         public void addY(int Y)
         {
-            startPoint.addY(Y);
+            TLPoint.addY(Y);
+            BRPoint.addY(Y);
         }
     }
 }
