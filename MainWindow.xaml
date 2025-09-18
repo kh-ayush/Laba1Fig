@@ -21,10 +21,10 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="12">
             <Label Content="Сдвиг по X:"/>
-            <TextBox Width="100" Margin="0,0,6,0"/>
+            <TextBox Text="0" Name="ShiftX"  Width="100" Margin="0,0,6,0"/>
             <Label Content="Сдвиг по Y:" />
-            <TextBox Width="100" Margin="0,0,10,0"/>
-            <Button  Content="Сдвинуть" Width="115"/>
+            <TextBox Text="0"  Name="ShiftY" Width="100" Margin="0,0,10,0"/>
+            <Button  Name="Faza" Content="Сдвинуть" Width="115" Click="Faza_Click"/>
         </StackPanel>
 
 

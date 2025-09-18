@@ -80,6 +80,20 @@ namespace Laba1Fig
             
         }
 
+        private void Faza_Click(object sender, RoutedEventArgs e)
+        {
+            int x = Convert.ToInt32(ShiftX.Text);
+            int y = Convert.ToInt32(ShiftY.Text);
+            foreach (var child in Polotno.Children) { 
+                if (child is Line line) {
+                    line.X1 += x;
+                    line.X2 += x;
+                    line.Y1 += y;
+                    line.Y2 += y;
+                }
+            }
+        }
+
         private void DrawFig(List<Points> pointz)
         {
             for (int i = 0; i < pointz.Count - 1; i++)
