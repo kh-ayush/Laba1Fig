@@ -10,33 +10,40 @@ namespace Laba1Fig
 {
     public class Square
     {
-        private Points startPoint;
-        private int side;
+        private Points p00;
+        private Points p01;
+        private Points p11;
+        private Points p10;
+        private int storona;
 
         public Square(Points startPoint, int side)
         {
-            this.startPoint = startPoint;
-            this.side = side;
+            p00 = startPoint;
+            storona = side;
+            p01=new Points(p00.getX()+storona, p00.getY());
+            p10 = new Points(p00.getX(), p00.getY()+storona);
+            p11 = new Points(p00.getX()+storona, p00.getY() + storona);
         }
 
-        public Points getStartPoint()
+        public List<Points> getPoints()
         {
-            return startPoint;
-        }
-
-        public int getSide() 
-        {
-            return side;
+            return  new List <Points> {p00,p01,p11,p10};
         }
 
         public void addX(int X)
         {
-            startPoint.addX(X);
+            p00.addX(X);
+            p01.addX(X);
+            p10.addX(X);
+            p11.addX(X);
         }
 
         public void addY(int Y)
         {
-            startPoint.addY(Y);
+            p00.addY(Y);
+            p01.addY(Y);
+            p10.addY(Y);
+            p11.addY(Y);
         }
     }
 }

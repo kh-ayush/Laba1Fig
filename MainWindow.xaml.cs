@@ -39,7 +39,7 @@ namespace Laba1Fig
 
             Triangle tree = new Triangle(p1, p2, p3);
 
-            DrawFig(new List<Points>() {p1, p2, p3});
+            DrawFig(tree.getPoints());
         }
 
         private void DrawLine(Points a, Points b) 
@@ -54,6 +54,30 @@ namespace Laba1Fig
                 Y2 = b.getY()
             };
             Polotno.Children.Add(line);
+        }
+
+        private void Chetyre_Click(object sender, RoutedEventArgs e)
+        {
+            Points p1= new Points(rand.Next(wcanvas-20), rand.Next(hcanvas-20));
+            Points p2=new Points(rand.Next(p1.getX(), wcanvas), rand.Next(p1.getY(), hcanvas));
+
+            Rectangle Upryam = new Rectangle( p1, p2 );
+            DrawFig(Upryam.getPoints());
+        }
+
+        private void Square_Click(object sender, RoutedEventArgs e)
+        {
+            Points p1 = new Points(rand.Next(wcanvas - 20), rand.Next(hcanvas - 20));
+            int side = rand.Next(wcanvas - p1.getX());
+            Square Kvadrat;
+            if (side < wcanvas - p1.getX() & side < hcanvas - p1.getY())
+            { Kvadrat = new Square(p1, side); }
+            else {
+                side = rand.Next(hcanvas - p1.getY());
+                Kvadrat = new Square(p1, side);
+            }
+            DrawFig(Kvadrat.getPoints());
+            
         }
 
         private void DrawFig(List<Points> pointz)

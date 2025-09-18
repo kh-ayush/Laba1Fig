@@ -19,19 +19,9 @@ namespace Laba1Fig
             this.p3 = p3;
         }
 
-        public Points getP1()
+        public List<Points> getPoints()
         {
-            return p1;
-        }
-
-        public Points getP2()
-        {
-            return p2;
-        }
-
-        public Points getP3()
-        {
-            return p3;
+            return new List<Points> { p1, p2, p3 };
         }
 
         public void addX(int X)
