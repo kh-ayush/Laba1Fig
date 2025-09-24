@@ -27,7 +27,12 @@ namespace Laba1Fig
             wcanvas = (int) Polotno.Width;
             hcanvas = (int) Polotno.Height;
 
+            
+
         }
+        Triangle tree;
+        Rectangle Upryam;
+        Square Kvadrat;
         Random rand = new Random();
         int wcanvas, hcanvas;
 
@@ -36,9 +41,8 @@ namespace Laba1Fig
             Points p1 = new Points(rand.Next(wcanvas), rand.Next(hcanvas));
             Points p2 = new Points(rand.Next(wcanvas), rand.Next(hcanvas));
             Points p3 = new Points(rand.Next(wcanvas), rand.Next(hcanvas));
-
-            Triangle tree = new Triangle(p1, p2, p3);
-
+            Polotno.Children.Clear();
+            tree = new Triangle(p1, p2, p3);
             DrawFig(tree.getPoints());
         }
 
@@ -60,8 +64,8 @@ namespace Laba1Fig
         {
             Points p1= new Points(rand.Next(wcanvas-20), rand.Next(hcanvas-20));
             Points p2=new Points(rand.Next(p1.getX(), wcanvas), rand.Next(p1.getY(), hcanvas));
-
-            Rectangle Upryam = new Rectangle( p1, p2 );
+            Polotno.Children.Clear();
+            Upryam = new Rectangle( p1, p2 );
             DrawFig(Upryam.getPoints());
         }
 
@@ -69,7 +73,7 @@ namespace Laba1Fig
         {
             Points p1 = new Points(rand.Next(wcanvas - 20), rand.Next(hcanvas - 20));
             int side = rand.Next(wcanvas - p1.getX());
-            Square Kvadrat;
+            Polotno.Children.Clear();
             if (side < wcanvas - p1.getX() & side < hcanvas - p1.getY())
             { Kvadrat = new Square(p1, side); }
             else {
